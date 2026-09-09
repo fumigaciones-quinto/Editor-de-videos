@@ -1,1 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>EDITA PRO | Edición de Vídeo</title>
+
+    <meta name="description" content="Edición profesional de vídeos para empresas, creadores y redes sociales.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9f1;
+            color: #1d2418;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           CONTENEDOR PRINCIPAL
+        ========================= */
+
+        .page {
+            width: 94%;
+            max-width: 1250px;
+            margin: 25px auto;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(40, 60, 30, 0.08);
+        }
+
+        /* =========================
+           CABECERA
+        ========================= */
+
+        header {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 45px;
+            background: rgba(255,255,255,0.96);
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 900;
+            color: #438d35;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #20291c;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        nav a {
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #438d35;
+        }
+
+        .header-button {
+            background: #438d35;
+            color: white;
+            padding: 14px 23px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            transform: translateY(-2px);
+            background: #347328;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 570px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 70px 75px;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(18,30,15,0.82) 0%,
+                    rgba(30,50,22,0.55) 45%,
+                    rgba(30,50,22,0.18) 100%
+                ),
+                linear-gradient(135deg, #496f3d, #9eb78b);
+        }
+
+        /* Decoración del fondo */
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            right: -100px;
+            top: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            right: 180px;
+            bottom: -130px;
+        }
+
+        .hero-content {
+            max-width: 620px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(255,255,255,0.94);
+            color: #438d35;
+            padding: 10px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .hero-tag .dot {
+            width: 10px;
+            height: 10px;
+            background: #438d35;
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(45px, 6vw, 75px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+
+        .hero h1 span {
+            color: #bde3a7;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 530px;
+            margin-bottom: 32px;
+        }
+
+        /* =========================
+           BOTONES
+        ========================= */
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #438d35;
+            color: white;
+            padding: 17px 28px;
+            border-radius: 35px;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+            border: 2px solid #438d35;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #347328;
+        }
+
+        .btn-light {
+            background: rgba(255,255,255,0.95);
+            color: #26301f;
+            padding: 17px 28px;
+            border-radius: 35px;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-3px);
+            background: white;
+        }
+
+        /* =========================
+           TARJETA FLOTANTE
+        ========================= */
+
+        .hero-card {
+            position: absolute;
+            right: 65px;
+            bottom: 45px;
+            width: 285px;
+            background: rgba(255,255,255,0.94);
+            padding: 25px;
+            border-radius: 25px;
+            z-index: 5;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+        }
+
+        .hero-card-top {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+
+        .hero-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 15px;
+            background: #dcefd4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+        }
+
+        .hero-card strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .hero-card small {
+            color: #71806b;
+            font-size: 12px;
+        }
+
+        .hero-card-line {
+            height: 7px;
+            background: #e5ecdf;
+            border-radius: 10px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .hero-card-line div {
+            height: 100%;
+            background: #438d35;
+            border-radius: 10px;
+        }
+
+        .hero-card-price {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            align-items: center;
+        }
+
+        .hero-card-price b {
+            font-size: 23px;
+            color: #438d35;
+        }
+
+        .hero-card-price span {
+            font-size: 12px;
+            color: #71806b;
+        }
+
+        /* =========================
+           BARRA DE ACCIONES
+        ========================= */
+
+        .action-bar {
+            width: 78%;
+            margin: -35px auto 0;
+            position: relative;
+            z-index: 10;
+            background: #cfe5bd;
+            padding: 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 15px 35px rgba(50,80,40,0.12);
+        }
+
+        .action-item {
+            flex: 1;
+            background: white;
+            border-radius: 35px;
+            padding: 16px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .action-item:hover {
+            transform: translateY(-2px);
+            background: #f6faf2;
+        }
+
+        .action-button {
+            background: #438d35;
+            color: white;
+            padding: 17px 25px;
+            border-radius: 35px;
+            font-weight: 800;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .action-button:hover {
+            background: #347328;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            padding: 100px 70px 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .intro-visual {
+            min-height: 350px;
+            border-radius: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(46,90,37,0.9),
+                    rgba(119,160,100,0.75)
+                );
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-circle {
+            width: 95px;
+            height: 95px;
+            background: white;
+            color: #438d35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            padding-left: 5px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .editing-badge {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            background: white;
+            color: #438d35;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .intro-content h2 {
+            font-size: 42px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .intro-content h2 span {
+            color: #438d35;
+        }
+
+        .intro-content p {
+            color: #6f7969;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .mini-features {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .mini-feature {
+            background: #edf5e8;
+            color: #438d35;
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 30px;
+                min-height: 650px;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .action-bar {
+                width: 90%;
+                flex-wrap: wrap;
+                border-radius: 25px;
+            }
+
+            .action-item {
+                min-width: 45%;
+            }
+
+            .action-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+                padding: 80px 30px 50px;
+                gap: 40px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .page {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                height: 75px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .header-button {
+                padding: 11px 15px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 610px;
+                padding: 50px 25px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .action-bar {
+                margin-top: -25px;
+                padding: 10px;
+            }
+
+            .action-item {
+                min-width: 100%;
+            }
+
+            .intro-content h2 {
+                font-size: 34px;
+            }
+
+            .intro-visual {
+                min-height: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- =========================
+         CABECERA
+    ========================== -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+            EDITA<span>PRO</span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#precios">Precios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <a href="tel:640978077" class="header-button">
+            📞 Contactar
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         HERO / PORTADA
+    ========================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                <div class="dot"></div>
+                Edición profesional disponible
+            </div>
+
+            <h1>
+                Haz que tus vídeos
+                <span>destaquen.</span>
+            </h1>
+
+            <p>
+                Edición de vídeo profesional para empresas,
+                creadores, emprendedores y redes sociales.
+                Tú grabas el contenido. Yo hago que se vea increíble.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#servicios" class="btn-primary">
+                    Ver servicios →
+                </a>
+
+                <a href="#precios" class="btn-light">
+                    Ver precios
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA DERECHA -->
+
+        <div class="hero-card">
+
+            <div class="hero-card-top">
+
+                <div class="hero-card-icon">
+                    🎬
+                </div>
+
+                <div>
+                    <strong>Proyecto en edición</strong>
+                    <small>Calidad profesional</small>
+                </div>
+
+            </div>
+
+            <div class="hero-card-line">
+                <div style="width: 85%;"></div>
+            </div>
+
+            <div class="hero-card-line">
+                <div style="width: 65%;"></div>
+            </div>
+
+            <div class="hero-card-line">
+                <div style="width: 92%;"></div>
+            </div>
+
+            <div class="hero-card-price">
+
+                <span>Desde</span>
+
+                <b>15 €</b>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BARRA DE BOTONES
+    ========================== -->
+
+    <div class="action-bar">
+
+        <a href="#servicios" class="action-item">
+            🎬 Ver servicios
+        </a>
+
+        <a href="#precios" class="action-item">
+            💰 Ver precios
+        </a>
+
+        <a href="#contacto" class="action-item">
+            💬 Contactarme
+        </a>
+
+        <a href="tel:640978077" class="action-button">
+            📞 640 978 077
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================== -->
+
+    <section class="intro">
+
+        <div class="intro-visual">
+
+            <div class="editing-badge">
+                ✦ Edición creativa
+            </div>
+
+            <div class="play-circle">
+                ▶
+            </div>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <h2>
+                Convierte tus grabaciones
+                en vídeos que
+                <span>enganchen.</span>
+            </h2>
+
+            <p>
+                Edición pensada para que tu contenido tenga
+                mejor ritmo, mejores cortes y una imagen mucho
+                más profesional. Ideal para redes sociales,
+                YouTube y negocios.
+            </p>
+
+            <div class="mini-features">
+
+                <div class="mini-feature">
+                    ✓ Cortes dinámicos
+                </div>
+
+                <div class="mini-feature">
+                    ✓ Subtítulos
+                </div>
+
+                <div class="mini-feature">
+                    ✓ Música
+                </div>
+
+                <div class="mini-feature">
+                    ✓ Efectos
+                </div>
+
+            </div>
+
+            <a href="#servicios" class="btn-primary">
+                Descubrir servicios →
+            </a>
+
+        </div>
+
+  </section>
