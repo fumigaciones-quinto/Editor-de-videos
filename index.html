@@ -1576,3 +1576,847 @@
         }
 
     </style>
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section class="contact" id="contacto">
+
+        <div class="contact-info">
+
+            <div class="section-tag">
+                ✦ Hablemos de tu proyecto
+            </div>
+
+            <h2>
+                ¿Tienes un vídeo
+                <span>en mente?</span>
+            </h2>
+
+            <p>
+                Cuéntame qué necesitas y hablamos sobre tu proyecto.
+                Trabajo con creadores, empresas, emprendedores
+                y clientes particulares.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a href="tel:640978077" class="contact-button">
+                    📞 Llamar al 640 978 077
+                </a>
+
+                <a href="#presupuesto" class="contact-button secondary">
+                    💰 Pedir presupuesto
+                </a>
+
+            </div>
+
+            <div class="contact-note">
+                🟢 Disponible para nuevos proyectos
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA CONTACTO -->
+
+        <div class="contact-card">
+
+            <div class="contact-card-icon">
+                🎬
+            </div>
+
+            <h3>
+                Contacto directo
+            </h3>
+
+            <p>
+                Para consultar disponibilidad,
+                precios o hablar sobre cualquier proyecto.
+            </p>
+
+            <div class="phone-box">
+
+                <span>Teléfono</span>
+
+                <strong>
+                    640 978 077
+                </strong>
+
+            </div>
+
+            <a href="tel:640978077" class="call-button">
+                📞 Contactar ahora
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRESUPUESTO
+    ========================== -->
+
+    <section class="budget" id="presupuesto">
+
+        <div class="budget-title">
+
+            <div class="section-tag">
+                ✦ Presupuesto personalizado
+            </div>
+
+            <h2>
+                Cuéntame qué
+                <span>necesitas.</span>
+            </h2>
+
+            <p>
+                Rellena el formulario y tendré una idea de lo que
+                buscas para poder hablar contigo sobre el proyecto.
+            </p>
+
+        </div>
+
+
+        <form class="budget-form" onsubmit="enviarPresupuesto(event)">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Tu nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej. Sergio"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ¿Qué necesitas?
+                    </label>
+
+                    <select id="servicio" required>
+
+                        <option value="">
+                            Selecciona un servicio
+                        </option>
+
+                        <option>
+                            TikTok / Short
+                        </option>
+
+                        <option>
+                            Reel
+                        </option>
+
+                        <option>
+                            Miniatura
+                        </option>
+
+                        <option>
+                            Vídeo YouTube 15–20 min
+                        </option>
+
+                        <option>
+                            Vídeo YouTube 20–30 min
+                        </option>
+
+                        <option>
+                            Edición para empresa
+                        </option>
+
+                        <option>
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        ¿Cuántos vídeos?
+                    </label>
+
+                    <select id="cantidad">
+
+                        <option>
+                            1 vídeo
+                        </option>
+
+                        <option>
+                            2–5 vídeos
+                        </option>
+
+                        <option>
+                            5–10 vídeos
+                        </option>
+
+                        <option>
+                            Más de 10 vídeos
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ¿Para qué plataforma?
+                    </label>
+
+                    <select id="plataforma">
+
+                        <option>
+                            YouTube
+                        </option>
+
+                        <option>
+                            TikTok
+                        </option>
+
+                        <option>
+                            Instagram
+                        </option>
+
+                        <option>
+                            Varias plataformas
+                        </option>
+
+                        <option>
+                            Empresa
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Cuéntame un poco sobre el proyecto
+                </label>
+
+                <textarea
+                    id="mensaje"
+                    rows="5"
+                    placeholder="Explícame qué tipo de vídeo quieres editar..."
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-button">
+                📩 Solicitar presupuesto
+            </button>
+
+            <p class="form-info">
+                Al pulsar el botón se abrirá WhatsApp con
+                la información preparada para enviarla.
+            </p>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         CTA FINAL
+    ========================== -->
+
+    <section class="final-cta">
+
+        <div>
+
+            <div class="section-tag">
+                ✦ ¿Empezamos?
+            </div>
+
+            <h2>
+                Dale a tus vídeos
+                el nivel que merecen.
+            </h2>
+
+            <p>
+                Hablemos de tu próximo proyecto.
+            </p>
+
+        </div>
+
+        <div class="final-buttons">
+
+            <a href="#servicios" class="btn-light">
+                Ver servicios
+            </a>
+
+            <a href="tel:640978077" class="btn-primary">
+                📞 640 978 077
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            EDITA<span>PRO</span>
+        </div>
+
+        <p>
+            Edición de vídeo para creadores, empresas
+            y proyectos digitales.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#servicios">
+                Servicios
+            </a>
+
+            <a href="#precios">
+                Precios
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 EDITAPRO · Todos los derechos reservados.
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         ESTILOS CONTACTO
+    ========================== -->
+
+    <style>
+
+        /* =========================
+           CONTACTO
+        ========================== */
+
+        .contact {
+            padding: 100px 70px;
+            background: #f4f8ef;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+        }
+
+        .contact-info h2 {
+            font-size: 52px;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .contact-info h2 span {
+            color: #438d35;
+        }
+
+        .contact-info > p {
+            color: #71806b;
+            line-height: 1.7;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            background: #438d35;
+            color: white;
+            padding: 16px 23px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            background: #347328;
+        }
+
+        .contact-button.secondary {
+            background: white;
+            color: #438d35;
+            border: 2px solid #d4e6cb;
+        }
+
+        .contact-button.secondary:hover {
+            background: #edf5e8;
+        }
+
+        .contact-note {
+            margin-top: 22px;
+            color: #63825a;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* TARJETA */
+
+        .contact-card {
+            background: #26351f;
+            color: white;
+            padding: 35px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(40,70,30,0.15);
+        }
+
+        .contact-card-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 20px;
+            background: #dcefd4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .contact-card h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .contact-card > p {
+            color: #c5d2bf;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .phone-box {
+            background: #34452d;
+            border-radius: 18px;
+            padding: 17px;
+            margin-bottom: 15px;
+        }
+
+        .phone-box span {
+            display: block;
+            color: #aab9a4;
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+
+        .phone-box strong {
+            font-size: 22px;
+            color: white;
+        }
+
+        .call-button {
+            display: block;
+            text-align: center;
+            background: #438d35;
+            color: white;
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: 800;
+            transition: 0.3s;
+        }
+
+        .call-button:hover {
+            background: #529d43;
+        }
+
+
+        /* =========================
+           PRESUPUESTO
+        ========================== */
+
+        .budget {
+            padding: 100px 70px;
+            background: white;
+        }
+
+        .budget-title {
+            max-width: 650px;
+            text-align: center;
+            margin: 0 auto 45px;
+        }
+
+        .budget-title h2 {
+            font-size: 46px;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .budget-title h2 span {
+            color: #438d35;
+        }
+
+        .budget-title p {
+            color: #71806b;
+            line-height: 1.6;
+        }
+
+
+        /* FORMULARIO */
+
+        .budget-form {
+            max-width: 800px;
+            margin: auto;
+            background: #f2f7ed;
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #394534;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            border: 2px solid #e0e9da;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            font-family: inherit;
+            font-size: 14px;
+            color: #30392c;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #7caf69;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            border: none;
+            background: #438d35;
+            color: white;
+            padding: 17px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #347328;
+            transform: translateY(-2px);
+        }
+
+        .form-info {
+            text-align: center;
+            margin-top: 13px;
+            color: #899585;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           CTA FINAL
+        ========================== */
+
+        .final-cta {
+            margin: 0 30px 30px;
+            padding: 60px;
+            background: #26351f;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .final-cta .section-tag {
+            background: #3a5032;
+            color: #bce0ad;
+        }
+
+        .final-cta h2 {
+            font-size: 42px;
+            line-height: 1.05;
+            max-width: 600px;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            color: #bbc9b5;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #f8faf5;
+            padding: 55px 70px 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 27px;
+            font-weight: 900;
+            color: #438d35;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #20291c;
+        }
+
+        footer > p {
+            color: #7b8676;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .footer-links a:hover {
+            color: #438d35;
+        }
+
+        .copyright {
+            border-top: 1px solid #e3e9df;
+            padding-top: 22px;
+            color: #9aa397;
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .contact {
+                grid-template-columns: 1fr;
+                padding: 75px 30px;
+            }
+
+            .contact-info h2 {
+                font-size: 43px;
+            }
+
+            .final-cta {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 45px 30px;
+            }
+
+            .final-cta h2 {
+                font-size: 35px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact {
+                padding: 65px 22px;
+            }
+
+            .contact-info h2 {
+                font-size: 38px;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .contact-button {
+                text-align: center;
+            }
+
+            .budget {
+                padding: 70px 20px;
+            }
+
+            .budget-title h2 {
+                font-size: 37px;
+            }
+
+            .budget-form {
+                padding: 25px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .final-cta {
+                margin: 0 15px 15px;
+            }
+
+            .final-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .final-buttons a {
+                text-align: center;
+                width: 100%;
+            }
+
+            footer {
+                padding: 45px 25px 25px;
+            }
+
+            .footer-links {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function enviarPresupuesto(event) {
+
+            event.preventDefault();
+
+            const nombre =
+                document.getElementById("nombre").value;
+
+            const servicio =
+                document.getElementById("servicio").value;
+
+            const cantidad =
+                document.getElementById("cantidad").value;
+
+            const plataforma =
+                document.getElementById("plataforma").value;
+
+            const mensaje =
+                document.getElementById("mensaje").value;
+
+
+            const texto =
+                "Hola, soy " + nombre +
+                ".%0A%0A" +
+
+                "Me interesa: " + servicio +
+                "%0A" +
+
+                "Cantidad: " + cantidad +
+                "%0A" +
+
+                "Plataforma: " + plataforma +
+                "%0A%0A" +
+
+                "Detalles del proyecto:%0A" +
+                mensaje;
+
+
+            const whatsapp =
+                "https://wa.me/34640978077?text=" + texto;
+
+
+            window.open(
+                whatsapp,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+
+</div>
+
+</body>
+                    </html>
